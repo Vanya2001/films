@@ -7,14 +7,16 @@ let personalMovieDb = {
   genres : [],  
   private : false
 };
-/*let films1 = prompt("Один из последних просмотренных фильмов?"),
-    noteFilms1 = prompt("На сколько оцените его?"),
-    films2 = prompt("Один из последних просмотренных фильмов?"),
-    noteFilms2 = prompt("На сколько оцените его?");*/
 
-for(let i = 0;i<2;i++){
+Cycle:for(let i = 0;i<2;i++){
   let films1 = prompt("Один из последних просмотренных фильмов?"),
     noteFilms1 = prompt("На сколько оцените его?");
-    personalMovieDb.movies[films1]=noteFilms1;
+    if(films1!=" " && noteFilms1!="" && films1!=null && noteFilms1!=null && films1.length<50){
+      personalMovieDb.movies[films1]=noteFilms1;
+    }else{
+      console.log("Erreur");
+      i--;
+    }
 }
+
 console.log(personalMovieDb);
