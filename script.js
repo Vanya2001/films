@@ -29,14 +29,18 @@ function rememberMyFilms(){
   }
 }
 rememberMyFilms();
-if(personalMovieDb.cout<10){
-  alert("Посмотрено довольно мало фильмов");
-}else if(personalMovieDb.cout>=10 && personalMovieDb.cout<=30){
-alert("Вы класный зритель");
-}else if(personalMovieDb.cout>30){
-alert("Вы киноман");
-}else{
-  alert("Произошла ошибка");
+
+function detectPersonalLevel(){
+  if(personalMovieDb.cout<10){
+    alert("Посмотрено довольно мало фильмов");
+  }else if(personalMovieDb.cout>=10 && personalMovieDb.cout<=30){
+  alert("Вы класный зритель");
+  }else if(personalMovieDb.cout>30){
+  alert("Вы киноман");
+  }else{
+    alert("Произошла ошибка");
+  }
 }
+detectPersonalLevel();
 
 console.log(personalMovieDb);
