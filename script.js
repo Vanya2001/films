@@ -7,6 +7,7 @@ function start(){
   }
 }
 start();
+//Object
 let personalMovieDb = {
   count : numberOfFilms,
   movies : {},
@@ -15,16 +16,19 @@ let personalMovieDb = {
   private : false
 };
 
-for(let i = 0;i<2;i++){
-  let films1 = prompt("Один из последних просмотренных фильмов?"),
-    noteFilms1 = prompt("На сколько оцените его?");
-    if(films1!=" " && noteFilms1!="" && films1!=null && noteFilms1!=null && films1.length<50){
-      personalMovieDb.movies[films1]=noteFilms1;
-    }else{
-      console.log("Erreur");
-      i--;
-    }
+function rememberMyFilms(){
+  for(let i = 0;i<2;i++){
+    let films1 = prompt("Один из последних просмотренных фильмов?"),
+      noteFilms1 = prompt("На сколько оцените его?");
+      if(films1!=" " && noteFilms1!="" && films1!=null && noteFilms1!=null && films1.length<50){
+        personalMovieDb.movies[films1]=noteFilms1;
+      }else{
+        console.log("Erreur");
+        i--;
+      }
+  }
 }
+rememberMyFilms();
 if(personalMovieDb.cout<10){
   alert("Посмотрено довольно мало фильмов");
 }else if(personalMovieDb.cout>=10 && personalMovieDb.cout<=30){
