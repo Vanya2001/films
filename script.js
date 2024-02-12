@@ -13,7 +13,7 @@ let personalMovieDb = {
   movies : {},
   actors : {},
   genres : [],  
-  private : false
+  privat : false
 };
 
 function rememberMyFilms(){
@@ -31,11 +31,11 @@ function rememberMyFilms(){
 rememberMyFilms();
 
 function detectPersonalLevel(){
-  if(personalMovieDb.cout<10){
+  if(personalMovieDb.count<10){
     alert("Посмотрено довольно мало фильмов");
-  }else if(personalMovieDb.cout>=10 && personalMovieDb.cout<=30){
+  }else if(personalMovieDb.count>=10 && personalMovieDb.count<=30){
   alert("Вы класный зритель");
-  }else if(personalMovieDb.cout>30){
+  }else if(personalMovieDb.count>30){
   alert("Вы киноман");
   }else{
     alert("Произошла ошибка");
@@ -43,4 +43,17 @@ function detectPersonalLevel(){
 }
 detectPersonalLevel();
 
-console.log(personalMovieDb);
+function showMyDb(hidden){
+  if(!hidden){
+    console.log(personalMovieDb);
+  }
+}
+showMyDb(personalMovieDb.privat);
+
+function writeYourGenres(){
+  for(let i = 1;i<=3;i++){
+    let genr = prompt(`Ваш любимый жанр под номером ${i}.`,"");
+    personalMovieDb.genres[i-1]=genr;
+  }
+}
+writeYourGenres();
