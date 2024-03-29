@@ -42,11 +42,20 @@ let personalMovieDb = {
     }
   },
   writeYourGenres:function (){
-    for(let i = 1;i<=3;i++){
-      let genr = prompt(`Ваш любимый жанр под номером ${i}.`,"");
-      personalMovieDb.genres[i-1]=genr;
-    }
-  },
+    let i=1;
+    Show:while(i<2){
+    let genrs = prompt(`Веддите ваши любимые фильмы через запятую`,"").toLowerCase();
+    if(genrs == ""||genrs==null) {
+      continue Show;
+    };
+    personalMovieDb.genres=genrs.split(", ");
+    personalMovieDb.genres.sort();
+    i++;
+  }
+    personalMovieDb.genres.forEach((element,i )=> {
+      console.log(`Любимый жанр ${i+1} - это ${element}`)
+    });
+   },
   toggleVisibleMyDb:function(){
     if(personalMovieDb.privat==false){
       personalMovieDb.privat = true;
